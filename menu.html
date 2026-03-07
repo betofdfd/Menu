@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Menü</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+margin:0;
+}
+
+.menu{
+width:500px;
+margin:auto;
+background:white;
+padding:25px;
+margin-top:40px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:#333;
+letter-spacing:2px;
+}
+
+.kategori{
+background:#333;
+color:white;
+padding:10px;
+margin-top:10px;
+cursor:pointer;
+
+}
+
+.icerik{
+display:none;
+padding:10px;
+border:1px solid #ddd;
+}
+
+
+.yemek{
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px dashed #ddd;
+}
+}
+
+</style>
+
+
+
+<script>
+function goster(id){
+
+var bolumler=document.getElementsByClassName("icerik");
+
+for(var i=0;i<bolumler.length;i++){
+bolumler[i].style.display="none";
+}
+
+document.getElementById(id).style.display="block";
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+<div class="menu">
+
+<h1>Mavera Garden Menü</h1>
+
+<!-- Çerezler -->
+<div class="kategori" onclick="goster('cerez')">
+🥜 Çerezler
+</div>
+
+<div id="cerez" class="icerik">
+
+<div class="yemek">
+<span>Karışık Çerez</span>
+<span>120₺</span>
+</div>
+
+<div class="yemek">
+<span>Fındık</span>
+<span>100₺</span>
+</div>
+
+<div class="yemek">
+<span>Antep Fıstığı</span>
+<span>140₺</span>
+</div>
+
+</div>
+
+
+<!-- Sıcak içecek -->
+<div class="kategori" onclick="goster('sicak')">
+☕ Sıcak İçecekler
+</div>
+
+<div id="sicak" class="icerik">
+
+<div class="yemek">
+<span>Çay</span>
+<span>20₺</span>
+</div>
+
+<div class="yemek">
+<span>Türk Kahvesi</span>
+<span>60₺</span>
+</div>
+
+<div class="yemek">
+<span>Latte</span>
+<span>90₺</span>
+</div>
+
+</div>
+
+
+<!-- Soğuk içecek -->
+<div class="kategori" onclick="goster('soguk')">
+🥤 Soğuk İçecekler
+</div>
+
+<div id="soguk" class="icerik">
+
+<div class="yemek">
+<span>Kola</span>
+<span>50₺</span>
+</div>
+
+<div class="yemek">
+<span>Fanta</span>
+<span>50₺</span>
+</div>
+
+<div class="yemek">
+<span>Ayran</span>
+<span>40₺</span>
+</div>
+
+</div>
+
+<!-- Yemekler -->
+<div class="kategori" onclick="goster('yemek')">
+🍽️ Yemekler
+</div>
+
+<div id="yemek" class="icerik">
+
+<div class="yemek">
+<span>Izgara Tavuk</span>
+<span>180₺</span>
+</div>
+
+<div class="yemek">
+<span>Köfte Izgara</span>
+<span>200₺</span>
+</div>
+
+<div class="yemek">
+<span>Tavuk Döner</span>
+<span>160₺</span>
+</div>
+
+<div class="yemek">
+<span>Et Döner</span>
+<span>220₺</span>
+</div>
+
+</div>
+
+
+<!-- Nargile -->
+<div class="kategori" onclick="goster('nargile')">
+💨 Nargile
+</div>
+
+<div id="nargile" class="icerik">
+
+<div class="yemek">
+<span>Elma Nargile</span>
+<span>150₺</span>
+</div>
+
+<div class="yemek">
+<span>Çilek Nargile</span>
+<span>150₺</span>
+</div>
+
+<div class="yemek">
+<span>Karpuz Nargile</span>
+<span>170₺</span>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
