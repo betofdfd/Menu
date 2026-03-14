@@ -103,21 +103,49 @@ transform:scale(1.02);
 </style>
 
 
-
 <script>
 function goster(id){
 
 var bolumler=document.getElementsByClassName("icerik");
 
 for(var i=0;i<bolumler.length;i++){
+if(bolumler[i].id != id){
 bolumler[i].style.display="none";
 }
+}
 
-document.getElementById(id).style.display="block";
+var secilen=document.getElementById(id);
+
+if(secilen.style.display=="block"){
+secilen.style.display="none";
+}else{
+secilen.style.display="block";
+sirala(id);
+}
 
 }
 
+function sirala(id){
 
+var liste=document.getElementById(id);
+var yemekler=Array.from(liste.getElementsByClassName("yemek"));
+
+yemekler.sort(function(a,b){
+
+var fiyatA=parseInt(a.children[1].innerText);
+var fiyatB=parseInt(b.children[1].innerText);
+
+return fiyatA - fiyatB;
+
+});
+
+liste.innerHTML="";
+
+yemekler.forEach(function(item){
+liste.appendChild(item);
+});
+
+}
 </script>
 
 </head>
