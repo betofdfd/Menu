@@ -117,6 +117,20 @@ transition:0.3s;
 .don{
 transform:rotate(90deg);
 }
+  #arama{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ddd;
+font-size:15px;
+outline:none;
+margin-bottom:15px;
+}
+
+#arama:focus{
+border-color:#555;
+box-shadow:0 0 5px rgba(0,0,0,0.2);
+}
 
 </style>
 
@@ -168,8 +182,26 @@ liste.innerHTML="";
 yemekler.forEach(function(item){
 liste.appendChild(item);
 });
+}
+  function urunAra(){
+
+var input = document.getElementById("arama").value.toLowerCase();
+var yemekler = document.getElementsByClassName("yemek");
+
+for(var i=0;i<yemekler.length;i++){
+
+var isim = yemekler[i].children[0].innerText.toLowerCase();
+
+if(isim.includes(input)){
+yemekler[i].style.display="flex";
+}else{
+yemekler[i].style.display="none";
+}
 
 }
+
+}
+  
 </script>
 
 </head>
@@ -179,6 +211,16 @@ liste.appendChild(item);
 <div class="menu">
 
 <h1>Mavera Garden Menü</h1>
+  
+  <input type="text" id="arama" placeholder="Ürün ara..." onkeyup="urunAra()" style="
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:15px;
+box-sizing:border-box;
+">
   
 
 <!-- Sıcak içecek -->
@@ -242,7 +284,7 @@ liste.appendChild(item);
 
 
 <!-- Soğuk içecek -->
-div class="kategori" onclick="goster('soguk', this)">
+<div class="kategori" onclick="goster('soguk', this)">
 <span class="ok">▶</span> 🥤 Soğuk İçecekler
 </div>
 
