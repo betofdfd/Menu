@@ -110,20 +110,14 @@ function goster(id){
 var bolumler=document.getElementsByClassName("icerik");
 
 for(var i=0;i<bolumler.length;i++){
-if(bolumler[i].id != id){
 bolumler[i].style.display="none";
 }
-}
 
-var secilen=document.getElementById(id);
-
-if(secilen.style.display=="block"){
-secilen.style.display="none";
-}else{
-secilen.style.display="block";
-}
+document.getElementById(id).style.display="block";
 
 }
+
+
 </script>
 
 </head>
