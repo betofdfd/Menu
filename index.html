@@ -117,19 +117,29 @@ transition:0.3s;
 .don{
 transform:rotate(90deg);
 }
+
   #arama{
 width:100%;
 padding:12px;
-border-radius:12px;
+border-radius:10px;
 border:1px solid #ddd;
 font-size:15px;
-outline:none;
-margin-bottom:15px;
+margin-bottom:10px;
+box-sizing:border-box;
 }
 
-#arama:focus{
-border-color:#555;
-box-shadow:0 0 5px rgba(0,0,0,0.2);
+#sonuclar{
+background:white;
+border-radius:10px;
+overflow:hidden;
+}
+
+.sonuc-item{
+display:flex;
+justify-content:space-between;
+padding:10px;
+border-bottom:1px solid #eee;
+font-size:15px;
 }
 
 </style>
@@ -187,15 +197,27 @@ liste.appendChild(item);
 
 var input = document.getElementById("arama").value.toLowerCase();
 var yemekler = document.getElementsByClassName("yemek");
+var sonucDiv = document.getElementById("sonuclar");
+
+sonucDiv.innerHTML="";
+
+if(input==""){
+return;
+}
 
 for(var i=0;i<yemekler.length;i++){
 
 var isim = yemekler[i].children[0].innerText.toLowerCase();
+var fiyat = yemekler[i].children[1].innerText;
 
 if(isim.includes(input)){
-yemekler[i].style.display="flex";
-}else{
-yemekler[i].style.display="none";
+
+var yeni = document.createElement("div");
+yeni.className="sonuc-item";
+yeni.innerHTML="<span>"+yemekler[i].children[0].innerText+"</span><span>"+fiyat+"</span>";
+
+sonucDiv.appendChild(yeni);
+
 }
 
 }
@@ -212,15 +234,9 @@ yemekler[i].style.display="none";
 
 <h1>Mavera Garden Menü</h1>
   
-  <input type="text" id="arama" placeholder="Ürün ara..." onkeyup="urunAra()" style="
-width:100%;
-padding:10px;
-margin-bottom:15px;
-border-radius:10px;
-border:1px solid #ddd;
-font-size:15px;
-box-sizing:border-box;
-">
+<input type="text" id="arama" placeholder="Ürün ara..." onkeyup="urunAra()">
+
+<div id="sonuclar"></div>
   
 
 <!-- Sıcak içecek -->
