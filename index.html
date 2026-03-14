@@ -77,7 +77,7 @@ display:none;
 padding:10px;
 border:1px solid #ddd;
 }
-
+  
 .yemek{
 display:flex;
 justify-content:space-between;
@@ -85,7 +85,13 @@ padding:8px 0;
 border-bottom:1px solid #eee;
 font-size:15px;
 }
-
+.yemek span:last-child{
+font-weight:bold;
+color:#333;
+min-width:70px;
+text-align:right;
+}
+  
 .kategori:hover{
 background:#555;
 }
@@ -242,11 +248,6 @@ liste.appendChild(item);
   <div class="yemek">
 <span>Fanta</span>
 <span>100₺</span>
-</div>
-
-<div class="yemek">
-<span>Fanta</span>
-<span>50₺</span>
 </div>
 
 <div class="yemek">
