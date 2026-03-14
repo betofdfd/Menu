@@ -109,19 +109,32 @@ color:#333;
 background:#444;
 transform:scale(1.02);
 }
+  
+  .ok{
+transition:0.3s;
+}
+
+.don{
+transform:rotate(90deg);
+}
 
 </style>
 
 
 <script>
-function goster(id){
+function goster(id, element){
 
 var bolumler=document.getElementsByClassName("icerik");
+var oklar=document.getElementsByClassName("ok");
 
 for(var i=0;i<bolumler.length;i++){
 if(bolumler[i].id != id){
 bolumler[i].style.display="none";
 }
+}
+
+for(var i=0;i<oklar.length;i++){
+oklar[i].classList.remove("don");
 }
 
 var secilen=document.getElementById(id);
@@ -130,6 +143,7 @@ if(secilen.style.display=="block"){
 secilen.style.display="none";
 }else{
 secilen.style.display="block";
+element.querySelector(".ok").classList.add("don");
 sirala(id);
 }
 
@@ -168,8 +182,8 @@ liste.appendChild(item);
   
 
 <!-- Sıcak içecek -->
-<div class="kategori" onclick="goster('sicak')">
-☕ Sıcak İçecekler
+<div class="kategori" onclick="goster('sicak', this)">
+<span class="ok">▶</span> ☕ Sıcak İçecekler
 </div>
 
 <div id="sicak" class="icerik">
@@ -228,8 +242,8 @@ liste.appendChild(item);
 
 
 <!-- Soğuk içecek -->
-<div class="kategori" onclick="goster('soguk')">
-🥤 Soğuk İçecekler
+div class="kategori" onclick="goster('soguk', this)">
+<span class="ok">▶</span> 🥤 Soğuk İçecekler
 </div>
 
 <div id="soguk" class="icerik">
@@ -312,8 +326,8 @@ liste.appendChild(item);
 
  
 <!-- Yemekler -->
-<div class="kategori" onclick="goster('yemek')">
-🍽️ Yemekler
+<div class="kategori" onclick="goster('yemek', this)">
+<span class="ok">▶</span> 🍽️ Yemekler
 </div>
 
 <div id="yemek" class="icerik">
@@ -366,8 +380,8 @@ liste.appendChild(item);
 </div>
 
   <!-- Aperatif Yemekler -->
-<div class="kategori" onclick="goster('apyemek')">
-📋 Aperatif Yemekler
+<div class="kategori" onclick="goster('apyemek', this)">
+<span class="ok">▶</span> 📋 Aperatif Yemekler
 </div>
 
 <div id="apyemek" class="icerik">
@@ -450,8 +464,8 @@ liste.appendChild(item);
 </div>
 
    <!-- Çerezler -->
-<div class="kategori" onclick="goster('cerez')">
- 🍪 Çerezler + Tatlılar
+<div class="kategori" onclick="goster('cerez', this)">
+<span class="ok">▶</span> 🍪 Çerezler + Tatlılar
 </div>
 
 <div id="cerez" class="icerik">
@@ -535,10 +549,10 @@ liste.appendChild(item);
 </div>
   
 <!-- Nargile -->
-<div class="kategori" onclick="goster('nargile')">
-💨 Nargile
+<div class="kategori" onclick="goster('nargile', this)">
+<span class="ok">▶</span> 💨 Nargile
 </div>
-
+  
 <div id="nargile" class="icerik">
 
 <div class="yemek">
