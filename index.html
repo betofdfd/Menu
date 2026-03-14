@@ -76,6 +76,12 @@ transition:0.2s;
 display:none;
 padding:10px;
 border:1px solid #ddd;
+animation:acil 0.3s ease;
+}
+
+@keyframes acil{
+from{opacity:0; transform:translateY(-5px);}
+to{opacity:1; transform:translateY(0);}
 }
   
 .yemek{
@@ -87,7 +93,7 @@ font-size:15px;
 }
 .yemek span:last-child{
 font-weight:bold;
-color:#333;
+color:#2e7d32;
 min-width:70px;
 text-align:right;
 background:#f3f3f3;
