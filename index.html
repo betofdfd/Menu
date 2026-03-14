@@ -148,6 +148,19 @@ border-bottom:1px solid #eee;
 font-size:15px;
 }
 
+  .baslik{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+}
+
+.logo{
+width:35px;
+height:35px;
+border-radius:50%;
+}
+  
 </style>
 
 
@@ -238,7 +251,10 @@ sonucDiv.appendChild(yeni);
 
 <div class="menu">
 
-<h1>Mavera Garden Menü</h1>
+<h1 class="baslik">
+<img src="logo.jpeg" class="logo">
+Mavera Garden Menü
+</h1>
   
 <input type="text" id="arama" placeholder="Ürün ara..." onkeyup="urunAra()">
 
